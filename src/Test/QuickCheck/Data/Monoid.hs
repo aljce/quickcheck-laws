@@ -6,9 +6,9 @@ import Test.QuickCheck.Laws
 import Data.Monoid
 
 checkMonoid :: forall m. (Monoid m, Arbitrary m, Eq m, Show m) => Proxy m -> TestGroup
-checkMonoid _ = TestGroup "Monoid" [Named "Left Identity" leftIdentity,
-                                    Named "Right Identity" rightIdentity,
-                                    Named "Associativity" associativity]
+checkMonoid _ = TestGroup "Data.Monoid.Monoid" [Named "Left Identity" leftIdentity,
+                                                Named "Right Identity" rightIdentity,
+                                                Named "Associativity" associativity]
   where leftIdentity  :: m -> Bool
         leftIdentity  x = (mempty <> x) == x
         rightIdentity :: m -> Bool

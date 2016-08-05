@@ -7,7 +7,7 @@ module Test.QuickCheck.Laws (A
                             ,NamedProp(..)
                             ,TestGroup(..)
                             ,module X
-                            ,testGroups
+                            ,(===>)
                             )where
 
 import Data.Semigroup
@@ -28,10 +28,10 @@ data NamedProp where
 data TestGroup where
   TestGroup :: (Foldable f) => Text -> f NamedProp -> TestGroup
 
-(==>) :: Bool -> Bool -> Bool
-False ==> _    = True
-True  ==> True = True
-_     ==> _    = False
+(===>) :: Bool -> Bool -> Bool
+False ===> _    = True
+True  ===> True = True
+_     ===> _    = False
 
 testGroups :: (Foldable f) => f TestGroup -> IO ()
 testGroups = mapM_ testGroup

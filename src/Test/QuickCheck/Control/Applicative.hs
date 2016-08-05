@@ -1,4 +1,4 @@
-module Test.QuickCheck.Laws.Control.Applicative where
+module Test.QuickCheck.Control.Applicative where
 
 import Test.QuickCheck
 import Test.QuickCheck.Laws

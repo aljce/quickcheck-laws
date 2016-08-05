@@ -7,6 +7,7 @@ module Test.QuickCheck.Laws (A
                             ,NamedProp(..)
                             ,TestGroup(..)
                             ,module X
+                            ,testGroups
                             )where
 
 import Data.Semigroup

@@ -27,6 +27,11 @@ data NamedProp where
 data TestGroup where
   TestGroup :: (Foldable f) => Text -> f NamedProp -> TestGroup
 
+(==>) :: Bool -> Bool -> Bool
+False ==> _    = True
+True  ==> True = True
+_     ==> _    = False
+
 testGroups :: (Foldable f) => f TestGroup -> IO ()
 testGroups = mapM_ testGroup
   where testGroup (TestGroup groupName props) = do
